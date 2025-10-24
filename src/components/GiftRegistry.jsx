@@ -1,51 +1,29 @@
 const GiftRegistry = () => {
-  const giftLinks = [
-    {
-      name: "Magazine Luiza",
-      description: "Lista de presentes digital",
-      icon: "🛍️",
-      color: "from-blue-500 to-blue-600",
-      href: "#"
-    },
-    {
-      name: "Americanas",
-      description: "Lista de presentes digital", 
-      icon: "🎁",
-      color: "from-red-500 to-red-600",
-      href: "#"
-    },
-    {
-      name: "Amazon",
-      description: "Lista de presentes digital",
-      icon: "📦",
-      color: "from-orange-500 to-orange-600", 
-      href: "https://www.amazon.com.br/hz/wishlist/ls/1XIGDKZZ4GMW5?ref_=list_d_wl_lfu_nav_3&viewType=grid"
-    }
-  ]
-
   return (
-    <div className="max-w-6xl mx-auto">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-        {giftLinks.map((gift, index) => (
-          <a
-            key={index}
-            href={gift.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative bg-gradient-to-br from-wedding-sage to-wedding-lime text-white rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 text-center transition-all duration-500 transform hover:scale-105 hover:shadow-3xl animate-fadeInUp overflow-hidden"
-            style={{animationDelay: `${index * 0.1}s`}}
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-wedding-lime to-wedding-sage opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="relative z-10">
-              <div className="relative mb-4 md:mb-6">
-                <div className="absolute inset-0 bg-white/20 rounded-full blur-xl scale-150"></div>
-                <div className="relative text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform duration-500">{gift.icon}</div>
-              </div>
-              <h4 className="text-lg sm:text-xl md:text-2xl font-serif font-light mb-3 md:mb-4 tracking-wide">{gift.name}</h4>
-              <p className="text-xs sm:text-sm opacity-90 group-hover:opacity-100 transition-opacity duration-500 font-light">{gift.description}</p>
+    <div className="max-w-4xl mx-auto">
+      <div className="flex justify-center">
+        <a
+          href="https://www.amazon.com.br/hz/wishlist/ls/1XIGDKZZ4GMW5?type=wishlist&filter=unpurchased&sort=price-asc&viewType=grid"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative bg-gradient-to-br from-wedding-sage to-wedding-lime text-white rounded-3xl md:rounded-4xl p-8 md:p-12 lg:p-16 text-center transition-all duration-500 transform hover:scale-105 hover:shadow-3xl animate-fadeInUp overflow-hidden w-full max-w-md"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-wedding-lime to-wedding-sage opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="relative z-10">
+            <div className="relative mb-6 md:mb-8">
+              <div className="absolute inset-0 bg-white/20 rounded-full blur-xl scale-150"></div>
+              <div className="relative text-6xl sm:text-7xl md:text-8xl group-hover:scale-110 transition-transform duration-500">📦</div>
             </div>
-          </a>
-        ))}
+            <h4 className="text-2xl sm:text-3xl md:text-4xl font-serif font-light mb-4 md:mb-6 tracking-wide">Amazon</h4>
+            <p className="text-base sm:text-lg md:text-xl opacity-90 group-hover:opacity-100 transition-opacity duration-500 font-light mb-6">
+              Lista de presentes digital
+            </p>
+            <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 group-hover:bg-white/30 transition-all duration-300">
+              <span className="text-sm font-medium">Ver Lista</span>
+              <span className="text-lg group-hover:translate-x-1 transition-transform duration-300">→</span>
+            </div>
+          </div>
+        </a>
       </div>
 
       <div className="mt-12 md:mt-16 p-6 md:p-8 bg-gradient-to-r from-wedding-rose/10 to-wedding-gold/10 rounded-2xl md:rounded-3xl border border-wedding-rose/20">
