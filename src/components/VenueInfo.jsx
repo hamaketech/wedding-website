@@ -8,7 +8,7 @@ const VenueInfo = () => {
             <div className="absolute inset-0 bg-wedding-sage/20 rounded-full blur-2xl scale-150"></div>
             <div className="relative text-4xl sm:text-5xl md:text-6xl animate-float">💒</div>
           </div>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-light text-wedding-forest mb-2 md:mb-3 tracking-wide">Cerimônia</h3>
+          <h3 className="text-2xl sm:text-3xl md:çtext-4xl font-serif font-light text-wedding-forest mb-2 md:mb-3 tracking-wide">Cerimônia</h3>
           <p className="text-wedding-forest/80 font-sans font-light text-lg md:text-xl tracking-wide">16:00 BRT</p>
         </div>
         
@@ -17,7 +17,16 @@ const VenueInfo = () => {
             <div className="text-wedding-rose text-xl">📍</div>
             <div>
               <p className="font-semibold text-wedding-forest">Local da Cerimônia</p>
-              <p className="text-wedding-forest">[Endereço da cerimônia será adicionado]</p>
+              <p className="text-wedding-forest">Igreja Nossa Senhora do Bom Parto</p>
+              <p className="text-wedding-forest">R. Treze de Maio, 2, Balneário Gaivota - SC, 88955-000</p>
+              <a 
+                href="https://maps.app.goo.gl/WRrCbz2Ppv3FtwRa6" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-wedding-rose hover:text-wedding-rose/80 underline text-sm mt-1 inline-block"
+              >
+                Ver no Google Maps →
+              </a>
             </div>
           </div>
           
@@ -55,7 +64,16 @@ const VenueInfo = () => {
             <div className="text-wedding-gold text-xl">📍</div>
             <div>
               <p className="font-semibold text-wedding-forest">Local da Festa</p>
-              <p className="text-wedding-forest">[Endereço da festa será adicionado]</p>
+              <p className="text-wedding-forest">Sitio Costa do Mar</p>
+              <p className="text-wedding-forest">R. Acre, S/N, Balneário Gaivota - SC, 88955-000</p>
+              <a 
+                href="https://maps.app.goo.gl/mo8fpuMTnxBbAS5T7" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-wedding-gold hover:text-wedding-gold/80 underline text-sm mt-1 inline-block"
+              >
+                Ver no Google Maps →
+              </a>
             </div>
           </div>
           
@@ -63,7 +81,7 @@ const VenueInfo = () => {
             <div className="text-wedding-gold text-xl">⏰</div>
             <div>
               <p className="font-semibold text-wedding-forest">Horário</p>
-              <p className="text-wedding-forest">17:30 - 23:00</p>
+              <p className="text-wedding-forest">17:30 - ∞</p>
             </div>
           </div>
           
