@@ -19,7 +19,7 @@ const GiftRegistry = () => {
       description: "Lista de presentes digital",
       icon: "📦",
       color: "from-orange-500 to-orange-600", 
-      href: "#"
+      href: "https://www.amazon.com.br/hz/wishlist/ls/1XIGDKZZ4GMW5?ref_=list_d_wl_lfu_nav_3&viewType=grid"
     }
   ]
 
@@ -30,6 +30,8 @@ const GiftRegistry = () => {
           <a
             key={index}
             href={gift.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative bg-gradient-to-br from-wedding-sage to-wedding-lime text-white rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 text-center transition-all duration-500 transform hover:scale-105 hover:shadow-3xl animate-fadeInUp overflow-hidden"
             style={{animationDelay: `${index * 0.1}s`}}
           >
