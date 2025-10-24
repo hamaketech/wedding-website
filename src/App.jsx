@@ -326,7 +326,7 @@ function App() {
                     <button 
                       onClick={() => {
                         const phoneNumber = '5548996950165';
-                        const message = 'Gostaria de confirmar a minha presença ao seu casamento. 😁!';
+                        const message = 'Gostaria de confirmar a minha presença ao seu casamento.';
                         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
                         window.open(whatsappUrl, '_blank');
                       }}
