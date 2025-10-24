@@ -55,7 +55,7 @@ const VenueInfo = () => {
             <div className="absolute inset-0 bg-wedding-gold/20 rounded-full blur-2xl scale-150"></div>
             <div className="relative text-4xl sm:text-5xl md:text-6xl animate-float" style={{animationDelay: '0.5s'}}>🎉</div>
           </div>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-light text-wedding-forest mb-2 md:mb-3 tracking-wide">Festa</h3>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-light text-wedding-forest mb-2 md:mb-3 tracking-wide">Recepção</h3>
           <p className="text-wedding-forest/80 font-sans font-light text-lg md:text-xl tracking-wide">Após a cerimônia</p>
         </div>
         
