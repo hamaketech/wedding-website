@@ -3,6 +3,7 @@ import CountdownTimer from './components/CountdownTimer'
 import VenueInfo from './components/VenueInfo'
 import GiftRegistry from './components/GiftRegistry'
 import PixPayment from './components/PixPayment'
+import FloatingMusicPlayer from './components/FloatingMusicPlayer'
 import monogram from './assets/monogram.png'
 
 function App() {
@@ -221,6 +222,9 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {/* Floating Music Player */}
+      <FloatingMusicPlayer />
     </div>
   )
 }
