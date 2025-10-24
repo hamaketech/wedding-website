@@ -5,6 +5,7 @@ import GiftRegistry from './components/GiftRegistry'
 import PixPayment from './components/PixPayment'
 import FloatingMusicPlayer from './components/FloatingMusicPlayer'
 import monogram from './assets/monogram.png'
+import kissingPhoto from './assets/kissing_light.jpg'
 
 function App() {
   const [activeSection, setActiveSection] = useState('home')
@@ -157,49 +158,62 @@ function App() {
       )}
 
       {/* Hero Section */}
-      <section id="home" className="pt-20 md:pt-32 pb-16 md:pb-24 px-4 min-h-screen flex items-center">
-        <div className="max-w-7xl mx-auto text-center w-full">
+      <section 
+        id="home" 
+        className="relative pt-20 md:pt-32 pb-16 md:pb-24 px-4 min-h-screen flex items-center overflow-hidden"
+        style={{
+          backgroundImage: `url(${kissingPhoto})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        
+        {/* Content */}
+        <div className="relative z-10 max-w-6xl mx-auto text-center w-full px-4">
           {/* Monogram */}
-          <div className="mb-8 md:mb-16 animate-fadeInUp">
+          <div className="mb-6 md:mb-10 animate-fadeInUp">
             <div className="relative inline-block">
-              <div className="absolute inset-0 bg-wedding-rose/20 rounded-full blur-3xl scale-150"></div>
+              <div className="absolute inset-0 bg-wedding-rose/40 rounded-full blur-3xl scale-150"></div>
               <img 
                 src={monogram} 
                 alt="Enzo & Alexia Monogram" 
-                className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 mx-auto drop-shadow-2xl hover:scale-110 transition-all duration-700"
+                className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 mx-auto drop-shadow-2xl hover:scale-110 transition-all duration-700"
               />
             </div>
           </div>
           
           {/* Names */}
           <div className="animate-fadeInUp" style={{animationDelay: '0.2s'}}>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[12rem] font-serif font-light text-wedding-forest mb-6 md:mb-8 drop-shadow-lg leading-[0.8] tracking-tight px-2">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-light text-white mb-4 md:mb-6 drop-shadow-2xl leading-[0.85] tracking-tight">
               Enzo & Alexia
             </h1>
           </div>
           
           {/* Decorative line */}
-          <div className="flex items-center justify-center mb-12 md:mb-16 animate-fadeInUp" style={{animationDelay: '0.3s'}}>
-            <div className="w-16 sm:w-24 md:w-32 h-px bg-gradient-to-r from-transparent via-wedding-rose to-transparent"></div>
-            <div className="mx-4 sm:mx-6 md:mx-8 text-2xl sm:text-3xl md:text-4xl text-wedding-rose animate-float">❦</div>
-            <div className="w-16 sm:w-24 md:w-32 h-px bg-gradient-to-r from-transparent via-wedding-rose to-transparent"></div>
+          <div className="flex items-center justify-center mb-8 md:mb-10 animate-fadeInUp" style={{animationDelay: '0.3s'}}>
+            <div className="w-12 sm:w-16 md:w-20 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent"></div>
+            <div className="mx-3 sm:mx-4 md:mx-6 text-xl sm:text-2xl md:text-3xl text-white animate-float drop-shadow-lg">❦</div>
+            <div className="w-12 sm:w-16 md:w-20 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent"></div>
           </div>
           
           {/* Subtitle */}
-          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-script text-wedding-forest mb-8 md:mb-12 animate-fadeInUp leading-relaxed px-4" style={{animationDelay: '0.4s'}}>
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-script text-white mb-6 md:mb-8 animate-fadeInUp leading-relaxed drop-shadow-lg" style={{animationDelay: '0.4s'}}>
             Vamos nos casar!
           </p>
           
           {/* Date */}
-          <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-wedding-forest/80 font-sans font-light animate-fadeInUp mb-12 md:mb-16 tracking-wide px-4" style={{animationDelay: '0.5s'}}>
+          <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 font-sans font-medium animate-fadeInUp mb-8 md:mb-10 tracking-wide drop-shadow-lg" style={{animationDelay: '0.5s'}}>
             22 de Novembro de 2025 • 16:00 BRT
           </div>
 
           {/* CTA Button */}
-          <div className="animate-fadeInUp px-4" style={{animationDelay: '0.6s'}}>
+          <div className="animate-fadeInUp" style={{animationDelay: '0.6s'}}>
             <button 
               onClick={() => scrollToSection('countdown')}
-              className="group bg-gradient-to-r from-wedding-rose to-wedding-gold text-white px-8 sm:px-10 md:px-12 py-4 md:py-5 rounded-full font-sans font-medium text-lg md:text-xl hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-3xl relative overflow-hidden w-full sm:w-auto"
+              className="group bg-gradient-to-r from-wedding-rose to-wedding-gold text-white px-6 sm:px-8 md:px-10 py-3 md:py-4 rounded-full font-sans font-semibold text-base md:text-lg hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-3xl relative overflow-hidden"
             >
               <span className="relative z-10">Ver Detalhes</span>
               <div className="absolute inset-0 bg-gradient-to-r from-wedding-gold to-wedding-rose opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
