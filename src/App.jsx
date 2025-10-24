@@ -8,10 +8,16 @@ import monogram from './assets/monogram.png'
 
 function App() {
   const [activeSection, setActiveSection] = useState('home')
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId)
+    setIsMobileMenuOpen(false) // Close mobile menu when navigating
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
   return (
@@ -72,15 +78,83 @@ function App() {
             </div>
             {/* Mobile menu button */}
             <div className="md:hidden">
-              <button className="text-wedding-forest hover:text-wedding-rose transition-colors duration-300">
+              <button 
+                onClick={toggleMobileMenu}
+                className="text-wedding-forest hover:text-wedding-rose transition-colors duration-300"
+                aria-label="Toggle mobile menu"
+              >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  {isMobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
                 </svg>
               </button>
             </div>
           </div>
         </div>
       </nav>
+
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <div className="fixed top-16 left-0 right-0 z-40 md:hidden animate-fadeInDown">
+          <div className="bg-wedding-cream/98 backdrop-blur-md border-b border-wedding-gold/20 shadow-lg">
+            <div className="px-4 py-4 space-y-2">
+              <button 
+                onClick={() => scrollToSection('home')}
+                className={`w-full text-left py-3 px-4 rounded-lg font-sans font-medium transition-colors duration-300 ${
+                  activeSection === 'home' 
+                    ? 'text-wedding-rose bg-wedding-rose/10' 
+                    : 'text-wedding-forest hover:text-wedding-rose hover:bg-wedding-rose/5'
+                }`}
+              >
+                Início
+              </button>
+              <button 
+                onClick={() => scrollToSection('countdown')}
+                className={`w-full text-left py-3 px-4 rounded-lg font-sans font-medium transition-colors duration-300 ${
+                  activeSection === 'countdown' 
+                    ? 'text-wedding-rose bg-wedding-rose/10' 
+                    : 'text-wedding-forest hover:text-wedding-rose hover:bg-wedding-rose/5'
+                }`}
+              >
+                Contagem
+              </button>
+              <button 
+                onClick={() => scrollToSection('venue')}
+                className={`w-full text-left py-3 px-4 rounded-lg font-sans font-medium transition-colors duration-300 ${
+                  activeSection === 'venue' 
+                    ? 'text-wedding-rose bg-wedding-rose/10' 
+                    : 'text-wedding-forest hover:text-wedding-rose hover:bg-wedding-rose/5'
+                }`}
+              >
+                Locais
+              </button>
+              <button 
+                onClick={() => scrollToSection('gifts')}
+                className={`w-full text-left py-3 px-4 rounded-lg font-sans font-medium transition-colors duration-300 ${
+                  activeSection === 'gifts' 
+                    ? 'text-wedding-rose bg-wedding-rose/10' 
+                    : 'text-wedding-forest hover:text-wedding-rose hover:bg-wedding-rose/5'
+                }`}
+              >
+                Presentes
+              </button>
+              <button 
+                onClick={() => scrollToSection('pix')}
+                className={`w-full text-left py-3 px-4 rounded-lg font-sans font-medium transition-colors duration-300 ${
+                  activeSection === 'pix' 
+                    ? 'text-wedding-rose bg-wedding-rose/10' 
+                    : 'text-wedding-forest hover:text-wedding-rose hover:bg-wedding-rose/5'
+                }`}
+              >
+                PIX
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Hero Section */}
       <section id="home" className="pt-20 md:pt-32 pb-16 md:pb-24 px-4 min-h-screen flex items-center">
