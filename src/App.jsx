@@ -6,6 +6,8 @@ import PixPayment from './components/PixPayment'
 import FloatingMusicPlayer from './components/FloatingMusicPlayer'
 import monogram from './assets/monogram.png'
 import kissingPhoto from './assets/kissing_light.jpg'
+import churchPhoto from './assets/us_in_the_middle_of_picture.jpg'
+import WeddingText from './constants/WeddingText'
 
 function App() {
   const [activeSection, setActiveSection] = useState('home')
@@ -51,6 +53,14 @@ function App() {
                 }`}
               >
                 Contagem
+              </button>
+              <button 
+                onClick={() => scrollToSection('story')}
+                className={`font-sans font-medium transition-colors duration-300 text-sm lg:text-base ${
+                  activeSection === 'story' ? 'text-wedding-rose' : 'text-wedding-forest hover:text-wedding-rose'
+                }`}
+              >
+                Nossa História
               </button>
               <button 
                 onClick={() => scrollToSection('venue')}
@@ -121,6 +131,16 @@ function App() {
                 }`}
               >
                 Contagem
+              </button>
+              <button 
+                onClick={() => scrollToSection('story')}
+                className={`w-full text-left py-3 px-4 rounded-lg font-sans font-medium transition-colors duration-300 ${
+                  activeSection === 'story' 
+                    ? 'text-wedding-rose bg-wedding-rose/10' 
+                    : 'text-wedding-forest hover:text-wedding-rose hover:bg-wedding-rose/5'
+                }`}
+              >
+                Nossa História
               </button>
               <button 
                 onClick={() => scrollToSection('venue')}
@@ -234,6 +254,102 @@ function App() {
             <p className="text-wedding-forest/80 text-lg md:text-xl font-sans font-light px-4">O grande dia está chegando!</p>
           </div>
           <CountdownTimer />
+        </div>
+      </section>
+
+      {/* Our Story Section */}
+      <section 
+        id="story" 
+        className="relative py-24 md:py-32 px-4 overflow-hidden"
+        style={{
+          backgroundImage: `url(${churchPhoto})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* Sophisticated gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/30 to-black/50"></div>
+        
+        {/* Content Container */}
+        <div className="relative z-10 max-w-6xl mx-auto">
+          {/* Section Title */}
+          <div className="text-center mb-16 md:mb-20 animate-fadeInUp">
+            <div className="inline-block mb-6 md:mb-8">
+              <div className="w-20 sm:w-24 md:w-28 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent mx-auto mb-4 md:mb-5"></div>
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-light text-white mb-4 md:mb-5 tracking-wide drop-shadow-2xl">
+                {WeddingText.title}
+              </h2>
+              <div className="w-20 sm:w-24 md:w-28 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent mx-auto"></div>
+            </div>
+          </div>
+
+          {/* Story Content - Two Column Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Column - Story Text */}
+            <div className="animate-fadeInUp" style={{animationDelay: '0.2s'}}>
+              <div className="p-6 md:p-8">
+                <div className="prose prose-lg prose-invert max-w-none">
+                  <p className="text-white/95 text-base md:text-lg lg:text-xl font-serif font-medium leading-relaxed mb-6 drop-shadow-lg italic tracking-wide">
+                    {WeddingText.text.split('\n').map((paragraph, index) => (
+                      <span key={index}>
+                        {paragraph.trim()}
+                        {index < WeddingText.text.split('\n').length - 1 && <br />}
+                      </span>
+                    ))}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Confirmation Button */}
+            <div className="animate-fadeInUp flex justify-center lg:justify-end" style={{animationDelay: '0.4s'}}>
+              <div className="w-full max-w-md">
+                <div className="bg-white/15 backdrop-blur-lg rounded-3xl p-8 md:p-10 border border-white/30 shadow-2xl hover:bg-white/20 transition-all duration-500">
+                  <div className="text-center mb-8">
+                    <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-wedding-rose to-wedding-gold rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300">
+                      <span className="text-3xl animate-pulse">💕</span>
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-serif font-light text-white mb-4 drop-shadow-lg">
+                      Confirme sua presença
+                    </h3>
+                    <p className="text-white/90 text-base md:text-lg font-sans font-light leading-relaxed drop-shadow-lg mb-4">
+                      Seria uma honra ter você celebrando conosco este momento tão especial!
+                    </p>
+                    <div className="flex items-center justify-center space-x-2 text-white/70 text-sm">
+                      <span>📅</span>
+                      <span>22 de Novembro de 2025</span>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <button 
+                      onClick={() => {
+                        const phoneNumber = '5548996950165';
+                        const message = 'Gostaria de confirmar a minha presença ao seu casamento. 😁!';
+                        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                        window.open(whatsappUrl, '_blank');
+                      }}
+                      className="group bg-gradient-to-r from-wedding-rose to-wedding-gold text-white px-8 py-4 rounded-full font-sans font-semibold text-lg hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-3xl relative overflow-hidden w-full transform hover:-translate-y-1"
+                    >
+                      <span className="relative z-10 flex items-center justify-center space-x-2">
+                        <span>✨</span>
+                        <span>Confirmar Presença</span>
+                        <span>✨</span>
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-wedding-gold to-wedding-rose opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </button>
+                    
+                    <div className="pt-2 border-t border-white/20">
+                      <p className="text-white/50 text-xs font-light text-center">
+                        💌 Qualquer dúvida, entre em contato conosco!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
